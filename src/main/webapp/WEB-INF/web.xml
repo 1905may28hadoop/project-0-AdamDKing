@@ -1,0 +1,30 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Servlets Demo</display-name>
+  
+  <!-- The Deployment Descriptor is another name for the web.xml
+  Here we define our servlets and their url mappings for the Servlet Container
+  to use. -->
+  <servlet>
+  	<!-- Internal name of Servlet: -->
+  	<servlet-name>Hello</servlet-name>
+  	<!-- Full Class of Servlet: -->
+  	<servlet-class>com.revature.servlets.HelloServlet</servlet-class>
+  	<!-- Bonus option if we want to load the Servlet before it's needed:
+  	The number specifies order of loading if multiple servlets have
+  	load-on-startup -->
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <!-- Now that we have a Servlet, we need to map a url to it -->
+  <servlet-mapping>
+  	<servlet-name>Hello</servlet-name>
+  	<!-- url pattern is the endpoint for our Servlet.  Note the pattern is
+  	attached to the end of our existing URL: -->
+  	<url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
